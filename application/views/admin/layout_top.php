@@ -23,10 +23,10 @@
       </a>
 
       <div class="nav-section-label" style="margin-top:8px;">Content</div>
-      <a href="<?php echo base_url('admin/news'); ?>" class="sidebar-link <?php echo ($this->uri->segment(2) === 'news') ? 'active' : ''; ?>">
+      <a href="<?php echo base_url('admin/news'); ?>" class="sidebar-link <?php echo ($this->uri->segment(2) === 'news' && $this->uri->segment(3) == FALSE) ? 'active' : ''; ?>">
         <i class="fas fa-newspaper"></i> Articles
       </a>
-      <a href="<?php echo base_url('admin/news/create'); ?>" class="sidebar-link">
+      <a href="<?php echo base_url('admin/news/create'); ?>" class="sidebar-link <?php echo ($this->uri->segment(2) === 'news' && $this->uri->segment(3) === 'create') ? 'active' : ''; ?>">
         <i class="fas fa-plus-circle"></i> New Article
       </a>
       <a href="<?php echo base_url('admin/categories'); ?>" class="sidebar-link <?php echo ($this->uri->segment(2) === 'categories') ? 'active' : ''; ?>">
