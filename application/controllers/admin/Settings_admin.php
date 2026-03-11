@@ -47,7 +47,7 @@ class Settings_admin extends Admin_Controller
         $config = array(
             'upload_path'   => $this->logo_path,
             'allowed_types' => 'jpg|jpeg|png|gif|webp|svg',
-            'max_size'      => 1024,       // 1 MB
+            'max_size'      => 2048,       // 2 MB
             'encrypt_name'  => FALSE,      // Keep name readable
             'file_name'     => 'logo',     // Always save as "logo.*"
         );
