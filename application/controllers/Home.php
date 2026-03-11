@@ -31,4 +31,10 @@ class Home extends MY_Controller
         $data['page_title'] = $this->settings['site_name'];
         $this->render('home/index', $data);
     }
+
+    public function about_us()
+    {
+        $data['page_title'] = 'About Us - ' . $this->settings['site_name'];
+        $this->render('home/about_us', $data);
+    }
 }

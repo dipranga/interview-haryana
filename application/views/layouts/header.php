@@ -65,14 +65,15 @@
       <li><a href="<?php echo base_url(); ?>"><i class="fas fa-home"></i> Home</a></li>
       <?php if (!empty($categories)): ?>
         <?php foreach ($categories as $cat): ?>
-          <li>
-            <a href="<?php echo base_url('category/' . $cat['slug']); ?>"
-               style="border-bottom-color:<?php echo $cat['color']; ?> !important">
-              <?php echo htmlspecialchars($cat['name']); ?>
-            </a>
-          </li>
+      <li>
+        <a href="<?php echo base_url('category/' . $cat['slug']); ?>"
+            style="border-bottom-color:<?php echo $cat['color']; ?> !important">
+          <?php echo htmlspecialchars($cat['name']); ?>
+        </a>
+      </li>
         <?php endforeach; ?>
       <?php endif; ?>
+      <li><a href="<?php echo base_url('about-us'); ?>"><i class="fas fa-info-circle"></i> About Us</a></li>
     </ul>
   </div>
 </nav>

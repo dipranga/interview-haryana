@@ -14,6 +14,7 @@ $route['translate_uri_dashes'] = FALSE;
 
 // ── PUBLIC ────────────────────────────────────────────────────────────
 $route['']                           = 'Home/index';
+$route['about-us']                   = 'Home/about_us';
 $route['category/(:any)']            = 'News/category/$1';
 $route['news/(:any)']                = 'News/show/$1';
 $route['tag/(:any)']                 = 'News/tag/$1';
