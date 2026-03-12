@@ -65,9 +65,9 @@ img { max-width:100%; height:auto; display:block; }
 
 /* ── BREAKING BAR ────────────────────────────────────────── */
 .breaking-bar { background:var(--accent); color:var(--dark); display:flex; align-items:center; overflow:hidden; }
-.breaking-label { background:var(--dark); color:var(--accent); padding:8px 16px; font-weight:700; font-size:12px; white-space:nowrap; text-transform:uppercase; letter-spacing:1px; flex-shrink:0; }
+.breaking-label { background:var(--dark); color:var(--accent); padding:4px 16px; font-weight:700; font-size:12px; white-space:nowrap; text-transform:uppercase; letter-spacing:1px; flex-shrink:0; }
 .breaking-scroll { overflow:hidden; flex:1; padding:0 16px; }
-.breaking-scroll marquee { font-size:13px; font-weight:600; padding:8px 0; color:var(--dark); }
+.breaking-scroll marquee { font-size:13px; font-weight:600; padding:4px 0; color:var(--dark); }
 .breaking-scroll marquee a { color:var(--dark); font-weight:700; }
 .breaking-scroll marquee a:hover { text-decoration:underline; color:var(--primary); }
 
@@ -170,7 +170,7 @@ img { max-width:100%; height:auto; display:block; }
 @media(max-width:900px) { .footer-grid { grid-template-columns:1fr 1fr; } }
 @media(max-width:600px) {
   .footer-grid { grid-template-columns:1fr; }
-  .slide img { height:220px; }
+  .slide img { height:180px; }
   .slide-caption h2 { font-size:15px; }
   .article-title { font-size:20px; }
   .header-inner { flex-wrap:wrap; gap:10px; }
