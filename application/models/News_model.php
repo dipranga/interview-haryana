@@ -103,10 +103,13 @@ class News_model extends CI_Model
     public function count_search($q)
     {
         $this->db->from('news')
+            ->join('categories', 'categories.id = news.category_id')
             ->where('status', 'published')
             ->group_start()
                 ->like('title', $q)
                 ->or_like('summary', $q)
+                ->or_like('body', $q)
+                ->or_like('categories.name', $q)
             ->group_end();
         return $this->db->count_all_results();
     }
