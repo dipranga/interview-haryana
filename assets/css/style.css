@@ -165,6 +165,7 @@ img { max-width:100%; height:auto; display:block; }
 .no-results i { font-size:48px; display:block; margin-bottom:12px; opacity:.25; color:var(--primary); }
 .mb-20 { margin-bottom:20px; }
 .cat-section { margin-bottom:28px; }
+.no-copy { user-select: none; } /* For elements where we want to prevent text selection (e.g., logo, certain buttons) */
 
 /* ── RESPONSIVE ──────────────────────────────────────────── */
 @media(max-width:900px) { .footer-grid { grid-template-columns:1fr 1fr; } }

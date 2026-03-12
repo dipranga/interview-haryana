@@ -6,9 +6,9 @@
         <span class="article-category" style="color:<?php echo $news['cat_color']; ?>">
           <a href="<?php echo base_url('category/' . $news['cat_slug']); ?>" style="color:inherit;"><?php echo htmlspecialchars($news['cat_name']); ?></a>
         </span>
-        <h1 class="article-title"><?php echo htmlspecialchars($news['title']); ?></h1>
+        <h1 class="article-title no-copy"><?php echo htmlspecialchars($news['title']); ?></h1>
         <?php if ($news['summary']): ?>
-          <p style="font-size:16px; color:#555; margin-bottom:12px; line-height:1.7; text-align: justify;"><?php echo htmlspecialchars($news['summary']); ?></p>
+          <p class="no-copy" style="font-size:16px; color:#555; margin-bottom:12px; line-height:1.7; text-align: justify;"><?php echo htmlspecialchars($news['summary']); ?></p>
         <?php endif; ?>
         <div class="article-meta">
           <span><i class="fas fa-user"></i> <?php echo htmlspecialchars($news['author_name'] ?? 'Admin'); ?></span>
@@ -29,7 +29,7 @@
         <a href="https://api.whatsapp.com/send?text=<?php echo urlencode($news['title'] . ' ' . current_url()); ?>" target="_blank" style="display:inline-flex; align-items:center; gap:6px; background:#25d366; color:#fff; padding:7px 16px; border-radius:4px; font-size:13px; font-weight:600;"><i class="fab fa-whatsapp"></i> WhatsApp</a>
       </div>
 
-      <div class="article-body"><?php echo $news['body']; ?></div>
+      <div class="article-body no-copy"><?php echo $news['body']; ?></div>
 
       <?php if (!empty($news['tags'])): ?>
       <div style="margin-top:24px; padding-top:16px; border-top:1px solid #eee;">
