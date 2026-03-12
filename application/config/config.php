@@ -8,7 +8,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 
 // Base URL — update this to match your WAMP setup
-$config['base_url'] = 'http://localhost/interview-haryana/';
+//$config['base_url'] = 'http://localhost/interview-haryana/';
+$config['base_url'] = 'http://136.232.163.122/interview-haryana/';
 
 $config['index_page']       = '';          // Empty because we use .htaccess
 $config['uri_protocol']     = 'AUTO';
