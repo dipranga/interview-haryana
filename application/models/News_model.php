@@ -93,6 +93,7 @@ class News_model extends CI_Model
                 ->like('news.title', $q)
                 ->or_like('news.summary', $q)
                 ->or_like('news.body', $q)
+                ->or_like('categories.name', $q)
             ->group_end()
             ->order_by('news.published_at', 'DESC')
             ->limit($limit, $offset)
