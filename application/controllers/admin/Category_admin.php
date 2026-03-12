@@ -27,15 +27,29 @@ class Category_admin extends Admin_Controller
     public function store()
     {
         $this->form_validation->set_rules('name', 'Name', 'required|min_length[2]|max_length[100]');
+
+        // If custom slug toggle is ON, validate the slug field too
+        if ($this->input->post('have_custom_slug')) {
+            $this->form_validation->set_rules(
+                'custom_slug', 'Custom Slug',
+                'required|min_length[2]|max_length[120]|alpha_dash'
+            );
+        }
+
         if ($this->form_validation->run() === FALSE) {
             $this->session->set_flashdata('errors', validation_errors());
             redirect('admin/categories/create');
             return;
         }
+
+        // Decide slug based on toggle and input
+        $slug = $this->input->post('have_custom_slug') ? $this->Category_model->generate_slug($this->input->post('custom_slug')) : $this->Category_model->generate_slug($this->input->post('name'));
+
         $this->Category_model->insert_category(array(
             'name'       => $this->input->post('name'),
-            'slug'       => $this->Category_model->generate_slug($this->input->post('name')),
-            'color'      => $this->input->post('color') ?: '#e63946',
+            'slug'       => $slug,
+            'have_custom_slug' => (int)(bool)$this->input->post('have_custom_slug'),
+            'color'      => $this->input->post('color') ?: '#1a3a6b',
             'sort_order' => (int)$this->input->post('sort_order'),
             'is_active'  => 1,
             'created_at' => date('Y-m-d H:i:s'),
@@ -55,14 +69,28 @@ class Category_admin extends Admin_Controller
     public function update($id)
     {
         $this->form_validation->set_rules('name', 'Name', 'required');
+
+        if ($this->input->post('have_custom_slug')) {
+            $this->form_validation->set_rules(
+                'custom_slug', 'Custom Slug',
+                'required|min_length[2]|max_length[120]|alpha_dash'
+            );
+        }
+
         if ($this->form_validation->run() === FALSE) {
             $this->session->set_flashdata('errors', validation_errors());
             redirect('admin/categories/edit/' . $id);
             return;
         }
+
+        // Decide slug based on toggle and input
+        $slug = $this->input->post('have_custom_slug') ? $this->Category_model->generate_slug($this->input->post('custom_slug'), (int)$id) : $this->Category_model->generate_slug($this->input->post('name'), (int)$id);
+
         $this->Category_model->update_category((int)$id, array(
             'name'       => $this->input->post('name'),
-            'color'      => $this->input->post('color') ?: '#e63946',
+            'slug'       => $slug,
+            'have_custom_slug' => (int)(bool)$this->input->post('have_custom_slug'),
+            'color'      => $this->input->post('color') ?: '#1a3a6b',
             'sort_order' => (int)$this->input->post('sort_order'),
             'is_active'  => (int)(bool)$this->input->post('is_active'),
             'updated_at' => date('Y-m-d H:i:s'),

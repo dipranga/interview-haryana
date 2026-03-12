@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Mar 11, 2026 at 07:01 AM
+-- Generation Time: Mar 12, 2026 at 03:53 PM
 -- Server version: 9.1.0
 -- PHP Version: 7.4.33
 
@@ -47,7 +47,7 @@ CREATE TABLE IF NOT EXISTS `admins` (
 --
 
 INSERT INTO `admins` (`id`, `name`, `email`, `password`, `role`, `is_active`, `last_login`, `created_at`, `updated_at`) VALUES
-(1, 'Super Admin', 'admin@interviewharyana.com', '$2y$10$dk5/HCfRXR/NPzeNZctpfeylSZ6V40Ko94Ixj4YmXLkcNbRRDQcxm', 'superadmin', 1, '2026-03-10 15:09:51', '2026-03-10 11:50:03', '2026-03-10 20:39:51'),
+(1, 'Super Admin', 'admin@interviewharyana.com', '$2y$10$dk5/HCfRXR/NPzeNZctpfeylSZ6V40Ko94Ixj4YmXLkcNbRRDQcxm', 'superadmin', 1, '2026-03-12 15:25:28', '2026-03-10 11:50:03', '2026-03-12 20:55:28'),
 (2, 'Abhimanu', 'abhimanu@admin.com', '$2y$10$dk5/HCfRXR/NPzeNZctpfeylSZ6V40Ko94Ixj4YmXLkcNbRRDQcxm', 'editor', 1, NULL, '2026-03-11 12:30:30', '2026-03-11 12:30:30');
 
 -- --------------------------------------------------------
@@ -89,6 +89,7 @@ CREATE TABLE IF NOT EXISTS `categories` (
   `id` int UNSIGNED NOT NULL AUTO_INCREMENT,
   `name` varchar(100) NOT NULL,
   `slug` varchar(120) NOT NULL,
+  `have_custom_slug` tinyint(1) DEFAULT '0',
   `color` varchar(20) DEFAULT '#e63946',
   `sort_order` tinyint DEFAULT '0',
   `is_active` tinyint(1) DEFAULT '1',
@@ -96,17 +97,7 @@ CREATE TABLE IF NOT EXISTS `categories` (
   `updated_at` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   UNIQUE KEY `slug` (`slug`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
---
--- Dumping data for table `categories`
---
-
-INSERT INTO `categories` (`id`, `name`, `slug`, `color`, `sort_order`, `is_active`, `created_at`, `updated_at`) VALUES
-(1, 'हरियाणा', 'haryana', '#e63946', 1, 1, '2026-03-10 11:50:03', '2026-03-10 11:50:03'),
-(2, 'राजनीति', 'politics', '#457b9d', 2, 1, '2026-03-10 11:50:03', '2026-03-10 11:50:03'),
-(7, 'शिक्षा', 'education', '#264653', 7, 1, '2026-03-10 11:50:03', '2026-03-10 11:50:03'),
-(10, 'केंद्रीय ', 'category-1773141465', '#37e6ac', 3, 1, '2026-03-10 11:17:45', '2026-03-10 11:17:58');
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -140,13 +131,6 @@ CREATE TABLE IF NOT EXISTS `news` (
   KEY `idx_category` (`category_id`),
   KEY `idx_published` (`published_at`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
---
--- Dumping data for table `news`
---
-
-INSERT INTO `news` (`id`, `category_id`, `admin_id`, `title`, `slug`, `summary`, `body`, `banner_image`, `is_featured`, `is_breaking`, `status`, `views`, `published_at`, `created_at`, `updated_at`) VALUES
-(1, 2, 1, 'USA Attacks IRAN', 'usa-attacks-iran', 'USA attaked Irana nd israil joins.', '<h2>USA attaked Irana nd israil joins.</h2>\r\n\r\nTrump gone mad\r\n\r\n <ul>\r\n<li> hello </li>\r\n<li> destroy </li>\r\n </ul>', 'eaabe9f393f24854a9026530c6764754.jpg', 0, 0, 'draft', 1, '2026-03-10 08:55:58', '2026-03-10 08:55:38', '2026-03-10 08:56:52');
 
 -- --------------------------------------------------------
 
@@ -209,9 +193,8 @@ CREATE TABLE IF NOT EXISTS `tags` (
   `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   UNIQUE KEY `slug` (`slug`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
---
 -- Constraints for dumped tables
 --
 
