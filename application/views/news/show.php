@@ -8,7 +8,7 @@
         </span>
         <h1 class="article-title"><?php echo htmlspecialchars($news['title']); ?></h1>
         <?php if ($news['summary']): ?>
-          <p style="font-size:16px; color:#555; margin-bottom:12px; line-height:1.7;"><?php echo htmlspecialchars($news['summary']); ?></p>
+          <p style="font-size:16px; color:#555; margin-bottom:12px; line-height:1.7; text-align: justify;"><?php echo htmlspecialchars($news['summary']); ?></p>
         <?php endif; ?>
         <div class="article-meta">
           <span><i class="fas fa-user"></i> <?php echo htmlspecialchars($news['author_name'] ?? 'Admin'); ?></span>
