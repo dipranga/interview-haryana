@@ -91,7 +91,15 @@ class News extends MY_Controller
 
     public function tag($slug)
     {
+        $page   = max(1, (int)$this->input->get('page'));
+        $offset = ($page - 1) * $this->per_page;
+        $total  = $this->News_model->count_by_tag($slug);
+
         $data['tag_slug']   = $slug;
+        $data['news']     = $this->News_model->get_by_tag($slug, $this->per_page, $offset);
+        $data['total']    = $total;
+        $data['page']     = $page;
+        $data['per_page'] = $this->per_page;
         $data['breaking']   = $this->News_model->get_breaking(8);
         $data['page_title'] = 'Tag: ' . $slug . ' | ' . $this->settings['site_name'];
         $this->render('news/tag', $data);

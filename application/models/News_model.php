@@ -81,6 +81,32 @@ class News_model extends CI_Model
             ->count_all_results();
     }
 
+    public function get_by_tag($tag_slug, $limit = 12, $offset = 0)
+    {
+        return $this->db
+            ->select('news.*, categories.name as cat_name, categories.slug as cat_slug, categories.color as cat_color')
+            ->from('news')
+            ->join('news_tags', 'news_tags.news_id = news.id')
+            ->join('tags', 'tags.id = news_tags.tag_id')
+            ->join('categories', 'categories.id = news.category_id')
+            ->where('tags.slug', $tag_slug)
+            ->where('news.status', 'published')
+            ->order_by('news.published_at', 'DESC')
+            ->limit($limit, $offset)
+            ->get()->result_array();
+    }
+    
+    public function count_by_tag($tag_slug)
+    {
+        return $this->db
+            ->from('news')
+            ->join('news_tags', 'news_tags.news_id = news.id')
+            ->join('tags', 'tags.id = news_tags.tag_id')
+            ->where('tags.slug', $tag_slug)
+            ->where('news.status', 'published')
+            ->count_all_results();
+    }
+
     public function get_by_slug($slug)
     {
         return $this->db
