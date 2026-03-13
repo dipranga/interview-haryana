@@ -32,6 +32,27 @@ class News extends MY_Controller
         $this->render('news/show', $data);
     }
 
+    public function headlines()
+    {
+        $data['news']      = $this->News_model->get_latest(20);
+        $data['breaking']  = $this->News_model->get_breaking(8);
+        $data['page_title'] = 'Headlines | ' . $this->settings['site_name'];
+        $this->render('news/headlines', $data);
+    }
+    public function all()
+    {
+        $page   = max(1, (int)$this->input->get('page'));
+        $offset = ($page - 1) * $this->per_page;
+        $total  = $this->News_model->count_all();
+
+        $data['news']     = $this->News_model->get_all($this->per_page, $offset);
+        $data['total']    = $total;
+        $data['page']     = $page;
+        $data['per_page'] = $this->per_page;
+        $data['breaking'] = $this->News_model->get_breaking(8);
+        $data['page_title'] = 'All News | ' . $this->settings['site_name'];
+        $this->render('news/all', $data);
+    }
     public function category($slug)
     {
         $cat = $this->Category_model->get_by_slug($slug);

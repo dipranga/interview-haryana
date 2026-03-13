@@ -72,12 +72,12 @@
       </section>
       <?php endif; ?>
 
-      <!-- LATEST NEWS -->
+      <!-- Headlines -->
       <section class="mb-20">
         <div class="section-heading">
           <div class="line"></div>
-          <h2>ताज़ा खबरें</h2>
-          <a href="<?php echo base_url('category/haryana'); ?>">और देखें <i class="fas fa-arrow-right"></i></a>
+          <h2>Headlines</h2>
+          <a href="<?php echo base_url('news/headlines'); ?>">और देखें <i class="fas fa-arrow-right"></i></a>
         </div>
         <?php if (!empty($latest)): ?>
         <div class="news-grid-4">

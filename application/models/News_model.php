@@ -10,6 +10,17 @@ class News_model extends CI_Model
 
     // ── Public ───────────────────────────────────────────────────────────
 
+    public function get_all($limit = 12, $offset = 0)
+    {
+        return $this->db
+            ->select('news.*, categories.name as cat_name, categories.slug as cat_slug, categories.color as cat_color')
+            ->from('news')
+            ->join('categories', 'categories.id = news.category_id')
+            ->where('news.status', 'published')
+            ->order_by('news.published_at', 'DESC')
+            ->limit($limit, $offset)
+            ->get()->result_array();
+    }
     public function get_latest($limit = 12, $offset = 0)
     {
         return $this->db
