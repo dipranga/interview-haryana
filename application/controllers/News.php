@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class News extends MY_Controller
 {
-    private $per_page = 12;
+    private $per_page = 10;
 
     public function __construct()
     {
