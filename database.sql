@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Mar 12, 2026 at 03:53 PM
+-- Generation Time: Mar 17, 2026 at 09:12 AM
 -- Server version: 9.1.0
 -- PHP Version: 7.4.33
 
@@ -40,15 +40,7 @@ CREATE TABLE IF NOT EXISTS `admins` (
   `updated_at` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
---
--- Dumping data for table `admins`
---
-
-INSERT INTO `admins` (`id`, `name`, `email`, `password`, `role`, `is_active`, `last_login`, `created_at`, `updated_at`) VALUES
-(1, 'Super Admin', 'admin@interviewharyana.com', '$2y$10$dk5/HCfRXR/NPzeNZctpfeylSZ6V40Ko94Ixj4YmXLkcNbRRDQcxm', 'superadmin', 1, '2026-03-12 15:25:28', '2026-03-10 11:50:03', '2026-03-12 20:55:28'),
-(2, 'Abhimanu', 'abhimanu@admin.com', '$2y$10$dk5/HCfRXR/NPzeNZctpfeylSZ6V40Ko94Ixj4YmXLkcNbRRDQcxm', 'editor', 1, NULL, '2026-03-11 12:30:30', '2026-03-11 12:30:30');
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -69,14 +61,7 @@ CREATE TABLE IF NOT EXISTS `banners` (
   `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
---
--- Dumping data for table `banners`
---
-
-INSERT INTO `banners` (`id`, `title`, `subtitle`, `image`, `link_url`, `position`, `sort_order`, `is_active`, `created_at`, `updated_at`) VALUES
-(1, 'HRERA', 'Haryana real estate', '29fe9e38e1123b3ade04f98486321917.jpg', 'https://haryanarera.gov.in/', 'homepage_slider', 0, 1, '2026-03-10 10:15:40', '2026-03-10 10:15:40');
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -97,7 +82,7 @@ CREATE TABLE IF NOT EXISTS `categories` (
   `updated_at` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   UNIQUE KEY `slug` (`slug`)
-) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -130,7 +115,7 @@ CREATE TABLE IF NOT EXISTS `news` (
   KEY `idx_breaking` (`is_breaking`),
   KEY `idx_category` (`category_id`),
   KEY `idx_published` (`published_at`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -160,24 +145,7 @@ CREATE TABLE IF NOT EXISTS `settings` (
   `updated_at` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   UNIQUE KEY `key` (`key`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
---
--- Dumping data for table `settings`
---
-
-INSERT INTO `settings` (`id`, `key`, `value`, `updated_at`) VALUES
-(1, 'site_name', 'Interview Haryana', '2026-03-10 15:56:28'),
-(2, 'site_tagline', 'हर बात आपके साथ', '2026-03-10 15:56:28'),
-(3, 'site_email', 'contact@interviewnharyana.com', '2026-03-10 15:56:28'),
-(4, 'site_phone', '+91 00000 00000', '2026-03-10 11:50:04'),
-(5, 'facebook_url', '', '2026-03-10 11:50:04'),
-(6, 'twitter_url', '', '2026-03-10 11:50:04'),
-(7, 'youtube_url', '', '2026-03-10 11:50:04'),
-(8, 'instagram_url', '', '2026-03-10 11:50:04'),
-(9, 'breaking_news_text', 'Breaking: Interview Haryana में आपका स्वागत है!', '2026-03-10 15:56:28'),
-(10, 'footer_about', 'Interview Haryana हरियाणा की ताज़ा खबरों का विश्वसनीय स्रोत है।', '2026-03-10 15:56:28'),
-(11, 'site_logo', 'logo.png', '2026-03-10 21:05:50');
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -193,8 +161,9 @@ CREATE TABLE IF NOT EXISTS `tags` (
   `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   UNIQUE KEY `slug` (`slug`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
+--
 -- Constraints for dumped tables
 --
 
