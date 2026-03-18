@@ -63,16 +63,40 @@
     <button class="hamburger"><i class="fas fa-bars"></i></button>
     <ul class="nav-list">
       <li><a href="<?php echo base_url(); ?>"><i class="fas fa-home"></i> Home</a></li>
-      <?php if (!empty($categories)): ?>
-        <?php foreach ($categories as $cat): ?>
-      <li>
-        <a href="<?php echo base_url('category/' . $cat['slug']); ?>"
-            style="border-bottom-color:<?php echo $cat['color']; ?> !important">
-          <?php echo htmlspecialchars($cat['name']); ?>
-        </a>
-      </li>
+
+      <?php if (!empty($categories)):
+            $top  = array_slice($categories, 0, 7);
+            $more = array_slice($categories, 7);
+      ?>
+        <?php foreach ($top as $cat): ?>
+          <li>
+            <a href="<?php echo base_url('category/' . $cat['slug']); ?>"
+               style="border-bottom-color:<?php echo $cat['color']; ?> !important">
+              <?php echo htmlspecialchars($cat['name']); ?>
+            </a>
+          </li>
         <?php endforeach; ?>
+
+        <?php if (!empty($more)): ?>
+          <li class="nav-more">
+            <a href="#" onclick="return false;">
+              More <i class="fas fa-chevron-down" style="font-size:10px;"></i>
+            </a>
+            <ul class="nav-dropdown">
+              <?php foreach ($more as $cat): ?>
+                <li>
+                  <a href="<?php echo base_url('category/' . $cat['slug']); ?>"
+                     style="border-left:3px solid <?php echo $cat['color']; ?>;">
+                    <?php echo htmlspecialchars($cat['name']); ?>
+                  </a>
+                </li>
+              <?php endforeach; ?>
+            </ul>
+          </li>
+        <?php endif; ?>
+
       <?php endif; ?>
+
       <li><a href="<?php echo base_url('about-us'); ?>"><i class="fas fa-info-circle"></i> About Us</a></li>
     </ul>
   </div>
