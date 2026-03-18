@@ -31,7 +31,7 @@ a { text-decoration:none; color:inherit; transition:color .2s; }
 img { max-width:100%; height:auto; display:block; }
 
 /* ── TOP BAR ─────────────────────────────────────────────── */
-.topbar { background:var(--dark); color:#a8b8d0; font-size:12px; padding:6px 0; border-bottom:2px solid var(--accent); }
+.topbar { background:var(--dark); color:#a8b8d0; font-size:12px; padding:4px 0; border-bottom:2px solid var(--accent); }
 .topbar-inner { display:flex; justify-content:space-between; align-items:center; }
 .topbar-date { color:#8899b8; }
 .topbar-social a { color:#a8b8d0; margin-left:12px; font-size:14px; transition:color .2s; }
@@ -98,7 +98,7 @@ img { max-width:100%; height:auto; display:block; }
 /* ── BREAKING BAR ────────────────────────────────────────── */
 .breaking-bar { background:var(--accent); color:var(--dark); display:flex; align-items:center; overflow:hidden; }
 .breaking-label { background:var(--dark); color:var(--accent); padding:8px 16px; font-weight:700; font-size:12px; white-space:nowrap; text-transform:uppercase; letter-spacing:1px; flex-shrink:0; }
-.breaking-scroll { overflow:hidden; flex:1; padding:0 16px; }
+.breaking-scroll { overflow:hidden; flex:1; padding:0 16px;}
 .breaking-scroll marquee { font-size:13px; font-weight:600; padding:8px 0; color:var(--dark); }
 .breaking-scroll marquee a { color:var(--dark); font-weight:700; }
 .breaking-scroll marquee a:hover { text-decoration:underline; color:var(--primary); }
