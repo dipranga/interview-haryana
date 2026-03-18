@@ -12,9 +12,9 @@ class Home extends MY_Controller
     public function index()
     {
         $data['sliders']       = $this->Banner_model->get_active('homepage_slider');
-        $data['featured']      = $this->News_model->get_featured(5);
+        $data['featured']      = $this->News_model->get_featured(6);
         $data['breaking']      = $this->News_model->get_breaking(8);
-        $data['latest']        = $this->News_model->get_latest(12);
+        $data['latest']        = $this->News_model->get_latest(4);
         $data['sidebar_banners'] = $this->Banner_model->get_active('sidebar');
 
         // Latest news per first 4 categories
