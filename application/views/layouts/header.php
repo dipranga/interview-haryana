@@ -63,10 +63,11 @@
     <button class="hamburger"><i class="fas fa-bars"></i></button>
     <ul class="nav-list">
       <li><a href="<?php echo base_url(); ?>"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="<?php echo base_url('news/headlines'); ?>"><i class="fas fa-newspaper"></i> Headlines</a></li>
 
       <?php if (!empty($categories)):
-            $top  = array_slice($categories, 0, 7);
-            $more = array_slice($categories, 7);
+            $top  = array_slice($categories, 0, 6);
+            $more = array_slice($categories, 6);
       ?>
         <?php foreach ($top as $cat): ?>
           <li>
