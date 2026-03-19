@@ -105,10 +105,17 @@
 
 <!-- BREAKING NEWS -->
 <?php if (!empty($breaking)): ?>
+<?php
+  $count          = count($breaking);
+  $seconds_each   = 6;                        // seconds per headline — tweak this
+  $min_duration   = 15;                       // never faster than this
+  $max_duration   = 90;                       // never slower than this
+  $duration       = max($min_duration, min($max_duration, $count * $seconds_each));
+?>
 <div class="breaking-bar">
   <span class="breaking-label"><i class="fas fa-bolt"></i> Breaking</span>
   <div class="breaking-scroll">
-    <div class="breaking-ticker">
+    <div class="breaking-ticker" style="animation-duration: <?php echo $duration; ?>s;">
       <?php foreach ($breaking as $b): ?>
         <a href="<?php echo base_url('news/' . $b['slug']); ?>"><?php echo htmlspecialchars($b['title']); ?></a>
         <span class="ticker-sep">|</span>
