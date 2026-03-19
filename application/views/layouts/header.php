@@ -108,12 +108,12 @@
 <div class="breaking-bar">
   <span class="breaking-label"><i class="fas fa-bolt"></i> Breaking</span>
   <div class="breaking-scroll">
-    <marquee scrollamount="4">
+    <div class="breaking-ticker">
       <?php foreach ($breaking as $b): ?>
         <a href="<?php echo base_url('news/' . $b['slug']); ?>"><?php echo htmlspecialchars($b['title']); ?></a>
-        &nbsp;&nbsp;|&nbsp;&nbsp;
+        <span class="ticker-sep">|</span>
       <?php endforeach; ?>
-    </marquee>
+    </div>
   </div>
 </div>
 <?php endif; ?>
