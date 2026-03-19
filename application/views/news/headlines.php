@@ -27,9 +27,8 @@
 
           <!-- Content -->
           <div class="list-content">
-            <?php if ($n['is_breaking']): ?>
-              <div class="list-badges"><span class="badge-breaking">Breaking</span></div>
-            <?php endif; ?>
+            <span class="cat-badge" style="background:<?php echo $n['cat_color']; ?>"><?php echo htmlspecialchars($n['cat_name']); ?></span>
+            <?php if ($n['is_breaking']): ?><span class="badge-breaking">Breaking</span><?php endif; ?>
             <div class="list-title">
               <a href="<?php echo base_url('news/' . $n['slug']); ?>"><?php echo htmlspecialchars($n['title']); ?></a>
             </div>
