@@ -12,7 +12,7 @@
       <div style="flex-shrink:0;">
         <?php if (!empty($settings['site_logo'])): ?>
           <div style="background:#f7fafc; border:1px solid #e2e8f0; border-radius:8px; padding:12px; display:inline-block;">
-            <img src="<?php echo base_url('assets/uploads/logo/' . $settings['site_logo']); ?>"
+            <img src="<?php echo base_url('assets/images/' . $settings['site_logo']); ?>"
                  alt="Current Logo" style="max-height:70px; max-width:240px; display:block; object-fit:contain;">
           </div>
           <p style="font-size:11px; color:#888; margin-top:6px; text-align:center;">Current Logo</p>

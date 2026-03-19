@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><?php echo isset($page_title) ? htmlspecialchars($page_title) : ($settings['site_name'] ?? 'Interview Haryana'); ?></title>
+  <link rel="icon" type="image/x-icon" href="<?php echo base_url('assets/images/favicon.ico'); ?>">
   <meta name="description" content="<?php echo $settings['site_tagline'] ?? 'हर बात आपके साथ '; ?>">
   <link rel="stylesheet" href="<?php echo base_url('assets/css/style.css'); ?>">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -40,7 +41,7 @@
       <!-- LOGO + SITE NAME side by side -->
       <a href="<?php echo base_url(); ?>" class="site-logo">
         <?php if (!empty($settings['site_logo'])): ?>
-          <img src="<?php echo base_url('assets/uploads/logo/' . $settings['site_logo']); ?>"
+          <img src="<?php echo base_url('assets/images/' . $settings['site_logo']); ?>"
                alt="<?php echo htmlspecialchars($settings['site_name'] ?? 'Interview Haryana'); ?>"
                class="site-logo-img">
         <?php endif; ?>

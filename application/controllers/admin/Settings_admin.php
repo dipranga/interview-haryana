@@ -10,7 +10,7 @@ class Settings_admin extends Admin_Controller
         parent::__construct();
         $this->load->model('Settings_model');
         $this->load->library('upload');
-        $this->logo_path = FCPATH . 'assets/uploads/logo/';
+        $this->logo_path = FCPATH . 'assets/images/';
     }
 
     public function index()
