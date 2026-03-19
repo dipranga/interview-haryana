@@ -11,7 +11,7 @@
           <p class="no-copy" style="font-size:16px; color:#555; margin-bottom:12px; line-height:1.7; text-align: justify;"><?php echo htmlspecialchars($news['summary']); ?></p>
         <?php endif; ?>
         <div class="article-meta">
-          <span><i class="fas fa-user"></i> <?php echo htmlspecialchars($news['author_name'] ?? 'Admin'); ?></span>
+          <!-- <span><i class="fas fa-user"></i> <?php // echo htmlspecialchars($news['author_name'] ?? 'Admin'); ?></span> -->
           <span><i class="far fa-clock"></i> <?php echo date('d M Y, h:i A', strtotime($news['published_at'])); ?></span>
           <span><i class="far fa-eye"></i> <?php echo number_format($news['views']); ?> views</span>
           <?php if ($news['is_breaking']): ?><span class="badge-breaking"><i class="fas fa-bolt"></i> Breaking</span><?php endif; ?>
