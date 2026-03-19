@@ -108,9 +108,9 @@
 <?php if (!empty($breaking)): ?>
 <?php
   $count          = count($breaking);
-  $seconds_each   = 6;                        // seconds per headline — tweak this
+  $seconds_each   = 7;                        // seconds per headline — tweak this
   $min_duration   = 15;                       // never faster than this
-  $max_duration   = 90;                       // never slower than this
+  $max_duration   = 120;                       // never slower than this
   $duration       = max($min_duration, min($max_duration, $count * $seconds_each));
 ?>
 <div class="breaking-bar">
