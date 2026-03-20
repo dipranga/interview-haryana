@@ -91,6 +91,7 @@ class News extends MY_Controller
 
     public function tag($slug)
     {
+        $slug = urldecode($slug);
         $page   = max(1, (int)$this->input->get('page'));
         $offset = ($page - 1) * $this->per_page;
         $total  = $this->News_model->count_by_tag($slug);
