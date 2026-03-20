@@ -24,7 +24,7 @@ $action  = $is_edit ? base_url('admin/news/update/' . $news['id']) : base_url('a
         <div class="form-group">
           <label class="form-label">Article Body <span class="req">*</span></label>
           <div class="form-hint" style="margin-bottom:6px;">Write plain text or paste HTML. Use &lt;p&gt;, &lt;h2&gt;, &lt;ul&gt;, &lt;blockquote&gt; etc.</div>
-          <textarea name="body" class="form-control" rows="20" required
+          <textarea name="body" class="form-control" rows="20"
                     placeholder="Write the full article here..."><?php echo set_value('body', $is_edit ? $news['body'] : ''); ?></textarea>
         </div>
         <div class="form-group">
@@ -100,4 +100,5 @@ $action  = $is_edit ? base_url('admin/news/update/' . $news['id']) : base_url('a
   </div>
 
 </div>
+<script src="<?php echo base_url('assets/js/tinymce.init.js'); ?>"></script>
 <?php echo form_close(); ?>
