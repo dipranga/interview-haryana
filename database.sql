@@ -190,9 +190,23 @@ COMMIT;
 
 -- ----------------------------
 -- Seed: Default Admin
--- Password: Admin@1234
+-- Password: Admin@1234 or password
 -- ----------------------------
 INSERT INTO `admins` (`name`, `email`, `password`, `role`) VALUES
 ('Interview Haryana Desk', 'admin@interviewharyana.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uXcWb/SCa', 'superadmin');
 -- NOTE: The hash above is for the string "password"
 -- Change it immediately after first login!
+
+-- Seed: Default Settings
+-- ----------------------------
+INSERT INTO `settings` (`key`, `value`) VALUES
+('site_name',           'Interview haryana'),
+('site_tagline',        'हरियाणा की हर खबर'),
+('site_email',          'contact@interviewharyana.com'),
+('site_phone',          '+91 00000 00000'),
+('facebook_url',        ''),
+('x_twitter_url',       ''),
+('youtube_url',         ''),
+('instagram_url',       ''),
+('breaking_news_text',  'Breaking: Interview haryana में आपका स्वागत है!'),
+('footer_about',        'Interview haryana हरियाणा की ताज़ा खबरों का विश्वसनीय स्रोत है।');
