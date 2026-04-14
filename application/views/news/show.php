@@ -39,7 +39,7 @@
       <!-- Share -->
       <div style="display:flex; gap:10px; margin-bottom:20px; flex-wrap:wrap;">
         <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode(current_url()); ?>" target="_blank" style="display:inline-flex; align-items:center; gap:6px; background:#1877f2; color:#fff; padding:7px 16px; border-radius:4px; font-size:13px; font-weight:600;"><i class="fab fa-facebook-f"></i> Share</a>
-        <a href="https://twitter.com/intent/tweet?url=<?php echo urlencode(current_url()); ?>&text=<?php echo urlencode($news['title']); ?>" target="_blank" style="display:inline-flex; align-items:center; gap:6px; background:#1da1f2; color:#fff; padding:7px 16px; border-radius:4px; font-size:13px; font-weight:600;"><i class="fab fa-twitter"></i> Tweet</a>
+        <a href="https://x.com/intent/tweet?url=<?php echo urlencode(current_url()); ?>&text=<?php echo urlencode($news['title']); ?>" target="_blank" style="display:inline-flex; align-items:center; gap:6px; background:#000; color:#fff; padding:7px 16px; border-radius:4px; font-size:13px; font-weight:600;"><i class="fab fa-x-twitter"></i> Tweet</a>
         <a href="https://api.whatsapp.com/send?text=<?php echo urlencode($news['title'] . ' ' . current_url()); ?>" target="_blank" style="display:inline-flex; align-items:center; gap:6px; background:#25d366; color:#fff; padding:7px 16px; border-radius:4px; font-size:13px; font-weight:600;"><i class="fab fa-whatsapp"></i> WhatsApp</a>
       </div>
 

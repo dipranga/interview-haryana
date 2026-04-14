@@ -20,8 +20,8 @@
         <?php if (!empty($settings['facebook_url'])): ?>
           <a href="<?php echo $settings['facebook_url']; ?>" target="_blank"><i class="fab fa-facebook-f"></i></a>
         <?php endif; ?>
-        <?php if (!empty($settings['twitter_url'])): ?>
-          <a href="<?php echo $settings['twitter_url']; ?>" target="_blank"><i class="fab fa-twitter"></i></a>
+        <?php if (!empty($settings['x_twitter_url'])): ?>
+          <a href="<?php echo $settings['x_twitter_url']; ?>" target="_blank"><i class="fab fa-x-twitter"></i></a>
         <?php endif; ?>
         <?php if (!empty($settings['youtube_url'])): ?>
           <a href="<?php echo $settings['youtube_url']; ?>" target="_blank"><i class="fab fa-youtube"></i></a>

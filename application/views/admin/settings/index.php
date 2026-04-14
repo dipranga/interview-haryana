@@ -89,8 +89,8 @@
           <input type="url" name="facebook_url" class="form-control" value="<?php echo $settings['facebook_url'] ?? ''; ?>" placeholder="https://facebook.com/...">
         </div>
         <div class="form-group">
-          <label class="form-label"><i class="fab fa-twitter" style="color:#1da1f2;"></i> Twitter URL</label>
-          <input type="url" name="twitter_url" class="form-control" value="<?php echo $settings['twitter_url'] ?? ''; ?>" placeholder="https://twitter.com/...">
+          <label class="form-label"><i class="fab fa-x-twitter" style="color:#1da1f2;"></i> X.com URL</label>
+          <input type="url" name="x_twitter_url" class="form-control" value="<?php echo $settings['x_twitter_url'] ?? ''; ?>" placeholder="https://x.com/...">
         </div>
       </div>
       <div class="form-row">
