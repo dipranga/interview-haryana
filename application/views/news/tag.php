@@ -6,7 +6,7 @@
   <?php if (!empty($news)): ?>
     <div class="news-grid-4" style="margin-bottom:24px;">
       <?php foreach ($news as $n): ?>
-        <div class="news-card">
+        <div class="news-card"><a href="<?php echo base_url('news/' . $n['slug']); ?>">
           <div class="card-img">
             <?php if ($n['banner_image']): ?>
               <img src="<?php echo base_url('assets/uploads/news/' . $n['banner_image']); ?>" alt="<?php echo htmlspecialchars($n['title']); ?>">
@@ -16,13 +16,13 @@
           </div>
           <div class="card-body">
             <?php if ($n['is_breaking']): ?><span class="badge-breaking">Breaking</span><?php endif; ?>
-            <div class="card-title"><a href="<?php echo base_url('news/' . $n['slug']); ?>"><?php echo htmlspecialchars($n['title']); ?></a></div>
+            <div class="card-title"><?php echo htmlspecialchars($n['title']); ?></div>
             <div class="card-meta">
               <span><i class="far fa-clock"></i> <?php echo date('d M Y', strtotime($n['published_at'])); ?></span>
               <span><i class="far fa-eye"></i> <?php echo number_format($n['views']); ?></span>
             </div>
           </div>
-        </div>
+        </a></div>
       <?php endforeach; ?>
     </div>
 

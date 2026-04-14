@@ -12,7 +12,7 @@
   <?php if (!empty($results)): ?>
     <div class="news-grid-4" style="margin-bottom:24px;">
       <?php foreach ($results as $n): ?>
-        <div class="news-card">
+        <div class="news-card"><a href="<?php echo base_url('news/' . $n['slug']); ?>">
           <div class="card-img">
             <?php if ($n['banner_image']): ?>
               <img src="<?php echo base_url('assets/uploads/news/' . $n['banner_image']); ?>" alt="">
@@ -22,10 +22,10 @@
           </div>
           <div class="card-body">
             <span class="cat-badge" style="background:<?php echo $n['cat_color']; ?>"><?php echo htmlspecialchars($n['cat_name']); ?></span>
-            <div class="card-title"><a href="<?php echo base_url('news/' . $n['slug']); ?>"><?php echo htmlspecialchars($n['title']); ?></a></div>
+            <div class="card-title"><?php echo htmlspecialchars($n['title']); ?></div>
             <div class="card-meta"><span><i class="far fa-clock"></i> <?php echo date('d M Y', strtotime($n['published_at'])); ?></span></div>
           </div>
-        </div>
+        </a></div>
       <?php endforeach; ?>
     </div>
   <?php elseif ($query): ?>

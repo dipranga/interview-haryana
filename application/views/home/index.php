@@ -49,7 +49,7 @@
         </div>
         <div class="news-grid-3">
           <?php foreach ($featured as $n): ?>
-            <div class="news-card">
+            <div class="news-card"><a href="<?php echo base_url('news/' . $n['slug']); ?>">
               <div class="card-img">
                 <?php if ($n['banner_image']): ?>
                   <img src="<?php echo base_url('assets/uploads/news/' . $n['banner_image']); ?>" alt="<?php echo htmlspecialchars($n['title']); ?>">
@@ -60,13 +60,13 @@
               <div class="card-body">
                 <span class="cat-badge" style="background:<?php echo $n['cat_color']; ?>"><?php echo htmlspecialchars($n['cat_name']); ?></span>
                 <?php if ($n['is_breaking']): ?><span class="badge-breaking">Breaking</span><?php endif; ?>
-                <div class="card-title"><a href="<?php echo base_url('news/' . $n['slug']); ?>"><?php echo htmlspecialchars($n['title']); ?></a></div>
+                <div class="card-title"><?php echo htmlspecialchars($n['title']); ?></div>
                 <div class="card-meta">
                   <span><i class="far fa-clock"></i> <?php echo date('d M Y', strtotime($n['published_at'])); ?></span>
                   <span><i class="far fa-eye"></i> <?php echo number_format($n['views']); ?></span>
                 </div>
               </div>
-            </div>
+            </a></div>
           <?php endforeach; ?>
         </div>
       </section>
@@ -82,7 +82,7 @@
         <?php if (!empty($latest)): ?>
         <div class="news-grid-4">
           <?php foreach ($latest as $n): ?>
-            <div class="news-card">
+            <div class="news-card"><a href="<?php echo base_url('news/' . $n['slug']); ?>">
               <div class="card-img">
                 <?php if ($n['banner_image']): ?>
                   <img src="<?php echo base_url('assets/uploads/news/' . $n['banner_image']); ?>" alt="<?php echo htmlspecialchars($n['title']); ?>">
@@ -92,12 +92,12 @@
               </div>
               <div class="card-body">
                 <span class="cat-badge" style="background:<?php echo $n['cat_color']; ?>"><?php echo htmlspecialchars($n['cat_name']); ?></span>
-                <div class="card-title"><a href="<?php echo base_url('news/' . $n['slug']); ?>"><?php echo htmlspecialchars($n['title']); ?></a></div>
+                <div class="card-title"><?php echo htmlspecialchars($n['title']); ?></div>
                 <div class="card-meta">
                   <span><i class="far fa-clock"></i> <?php echo date('d M Y', strtotime($n['published_at'])); ?></span>
                 </div>
               </div>
-            </div>
+            </a></div>
           <?php endforeach; ?>
         </div>
         <?php else: ?>
@@ -117,7 +117,7 @@
             </div>
             <div class="news-grid-4">
               <?php foreach ($block['news'] as $n): ?>
-                <div class="news-card">
+                <div class="news-card"><a href="<?php echo base_url('news/' . $n['slug']); ?>">
                   <div class="card-img">
                     <?php if ($n['banner_image']): ?>
                       <img src="<?php echo base_url('assets/uploads/news/' . $n['banner_image']); ?>" alt="<?php echo htmlspecialchars($n['title']); ?>">
@@ -126,12 +126,12 @@
                     <?php endif; ?>
                   </div>
                   <div class="card-body">
-                    <div class="card-title"><a href="<?php echo base_url('news/' . $n['slug']); ?>"><?php echo htmlspecialchars($n['title']); ?></a></div>
+                    <div class="card-title"><?php echo htmlspecialchars($n['title']); ?></div>
                     <div class="card-meta">
                       <span><i class="far fa-clock"></i> <?php echo date('d M Y', strtotime($n['published_at'])); ?></span>
                     </div>
                   </div>
-                </div>
+                </a></div>
               <?php endforeach; ?>
             </div>
           </section>

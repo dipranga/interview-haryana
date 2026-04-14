@@ -45,7 +45,7 @@
         <div class="section-heading"><div class="line"></div><h2>संबंधित खबरें</h2></div>
         <div class="news-grid-3">
           <?php foreach ($related as $n): ?>
-            <div class="news-card">
+            <div class="news-card"><a href="<?php echo base_url('news/' . $n['slug']); ?>">
               <div class="card-img">
                 <?php if ($n['banner_image']): ?>
                   <img src="<?php echo base_url('assets/uploads/news/' . $n['banner_image']); ?>" alt="">
@@ -54,10 +54,10 @@
                 <?php endif; ?>
               </div>
               <div class="card-body">
-                <div class="card-title"><a href="<?php echo base_url('news/' . $n['slug']); ?>"><?php echo htmlspecialchars($n['title']); ?></a></div>
+                <div class="card-title"><?php echo htmlspecialchars($n['title']); ?></div>
                 <div class="card-meta"><span><i class="far fa-clock"></i> <?php echo date('d M Y', strtotime($n['published_at'])); ?></span></div>
               </div>
-            </div>
+            </a></div>
           <?php endforeach; ?>
         </div>
       </div>
