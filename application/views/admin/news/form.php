@@ -85,18 +85,41 @@ $action  = $is_edit ? base_url('admin/news/update/' . $news['id']) : base_url('a
     </div>
 
     <div class="admin-card">
-      <div class="admin-card-header"><h3><i class="fas fa-image"></i> Banner Image</h3></div>
-      <div class="admin-card-body">
-        <?php if ($is_edit && !empty($news['banner_image'])): ?>
-          <img src="<?php echo base_url('assets/uploads/news/' . $news['banner_image']); ?>"
-               style="width:100%; border-radius:6px; margin-bottom:10px;" alt="Current banner">
-          <div class="form-hint" style="margin-bottom:8px;">Upload new to replace</div>
-        <?php endif; ?>
-        <input type="file" name="banner_image" class="form-control" accept="image/*" data-preview="bannerPreview">
-        <img id="bannerPreview" class="img-preview" style="display:none;" alt="Preview">
-        <div class="form-hint">JPG, PNG, WebP — Max 2MB. Recommended: 1200×675px</div>
-      </div>
+  <div class="admin-card-header"><h3><i class="fas fa-images"></i> Article Images</h3></div>
+  <div class="admin-card-body">
+    <div class="form-hint" style="margin-bottom:12px;">JPG, PNG, WebP — Max 2MB. Recommended: 1200×675px</div>
+
+    <div class="form-group" style="border-bottom:1px solid #eee; padding-bottom:15px; margin-bottom:15px;">
+      <label class="form-label">Image 1 (Main)</label>
+      <?php if ($is_edit && !empty($news['banner_image'])): ?>
+        <img src="<?php echo base_url('assets/uploads/news/' . $news['banner_image']); ?>"
+             style="width:100%; border-radius:6px; margin-bottom:10px;" alt="Current banner 1">
+      <?php endif; ?>
+      <input type="file" name="banner_image" class="form-control" accept="image/*" data-preview="bannerPreview1">
+      <img id="bannerPreview1" class="img-preview" style="display:none;" alt="Preview">
     </div>
+
+    <div class="form-group" style="border-bottom:1px solid #eee; padding-bottom:15px; margin-bottom:15px;">
+      <label class="form-label">Image 2</label>
+      <?php if ($is_edit && !empty($news['banner_image_2'])): ?>
+        <img src="<?php echo base_url('assets/uploads/news/' . $news['banner_image_2']); ?>"
+             style="width:100%; border-radius:6px; margin-bottom:10px;" alt="Current banner 2">
+      <?php endif; ?>
+      <input type="file" name="banner_image_2" class="form-control" accept="image/*" data-preview="bannerPreview2">
+      <img id="bannerPreview2" class="img-preview" style="display:none;" alt="Preview">
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">Image 3</label>
+      <?php if ($is_edit && !empty($news['banner_image_3'])): ?>
+        <img src="<?php echo base_url('assets/uploads/news/' . $news['banner_image_3']); ?>"
+             style="width:100%; border-radius:6px; margin-bottom:10px;" alt="Current banner 3">
+      <?php endif; ?>
+      <input type="file" name="banner_image_3" class="form-control" accept="image/*" data-preview="bannerPreview3">
+      <img id="bannerPreview3" class="img-preview" style="display:none;" alt="Preview">
+    </div>
+  </div>
+</div>
   </div>
 
 </div>

@@ -100,6 +100,8 @@ CREATE TABLE IF NOT EXISTS `news` (
   `summary` text,
   `body` longtext NOT NULL,
   `banner_image` varchar(255) DEFAULT NULL,
+  `banner_image_2` varchar(255) DEFAULT NULL,
+  `banner_image_3` varchar(255) DEFAULT NULL,
   `is_featured` tinyint(1) DEFAULT '0',
   `is_breaking` tinyint(1) DEFAULT '0',
   `status` enum('draft','published','archived') DEFAULT 'draft',

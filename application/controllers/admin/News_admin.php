@@ -44,6 +44,8 @@ class News_admin extends Admin_Controller
         $slug   = $this->News_model->generate_slug($title);
         $status = $this->input->post('status') ?: 'draft';
         $banner = $this->_handle_upload('banner_image');
+        $banner2 = $this->_handle_upload('banner_image_2');
+        $banner3 = $this->_handle_upload('banner_image_3');
 
         $id = $this->News_model->insert_news(array(
             'category_id'  => $this->input->post('category_id'),
@@ -53,6 +55,8 @@ class News_admin extends Admin_Controller
             'summary'      => $this->input->post('summary'),
             'body'         => $this->input->post('body'),
             'banner_image' => $banner,
+            'banner_image_2' => $banner2,
+            'banner_image_3' => $banner3,
             'is_featured'  => (int)(bool)$this->input->post('is_featured'),
             'is_breaking'  => (int)(bool)$this->input->post('is_breaking'),
             'status'       => $status,
@@ -105,6 +109,8 @@ class News_admin extends Admin_Controller
 
         $status = $this->input->post('status') ?: 'draft';
         $banner = $this->_handle_upload('banner_image') ?: $news['banner_image'];
+        $banner2 = $this->_handle_upload('banner_image_2') ?: $news['banner_image_2'];
+        $banner3 = $this->_handle_upload('banner_image_3') ?: $news['banner_image_3'];
 
         $update = array(
             'category_id'  => $this->input->post('category_id'),
@@ -112,6 +118,8 @@ class News_admin extends Admin_Controller
             'summary'      => $this->input->post('summary'),
             'body'         => $this->input->post('body'),
             'banner_image' => $banner,
+            'banner_image_2' => $banner2,
+            'banner_image_3' => $banner3,
             'is_featured'  => (int)(bool)$this->input->post('is_featured'),
             'is_breaking'  => (int)(bool)$this->input->post('is_breaking'),
             'status'       => $status,
@@ -132,8 +140,13 @@ class News_admin extends Admin_Controller
     public function delete($id)
     {
         $news = $this->News_model->get_by_id((int)$id);
-        if ($news && $news['banner_image'] && file_exists($this->upload_path . $news['banner_image'])) {
-            @unlink($this->upload_path . $news['banner_image']);
+        if ($news) {
+            $images = [$news['banner_image'], $news['banner_image_2'], $news['banner_image_3']];
+            foreach ($images as $img) {
+                if (!empty($img) && file_exists($this->upload_path . $img)) {
+                    @unlink($this->upload_path . $img);
+                }
+            }
         }
         $this->News_model->delete_news((int)$id);
         $this->session->set_flashdata('success', 'Article deleted.');

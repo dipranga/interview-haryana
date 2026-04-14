@@ -18,9 +18,23 @@
         </div>
       </div>
 
-      <?php if ($news['banner_image']): ?>
-        <img src="<?php echo base_url('assets/uploads/news/' . $news['banner_image']); ?>" alt="<?php echo htmlspecialchars($news['title']); ?>" class="article-banner">
-      <?php endif; ?>
+      <div class="article-gallery" style="margin-bottom: 20px;">
+        <?php if (!empty($news['banner_image'])): ?>
+          <img src="<?php echo base_url('assets/uploads/news/' . $news['banner_image']); ?>" alt="<?php echo htmlspecialchars($news['title']); ?>" class="article-banner" style="margin-bottom: 10px;">
+        <?php endif; ?>
+        
+        <?php if (!empty($news['banner_image_2']) || !empty($news['banner_image_3'])): ?>
+          <div style="display: flex; gap: 10px;">
+            <?php if (!empty($news['banner_image_2'])): ?>
+              <img src="<?php echo base_url('assets/uploads/news/' . $news['banner_image_2']); ?>" alt="Article Image 2" class="article-banner" style="flex: 1; min-width: 0;">
+            <?php endif; ?>
+            
+            <?php if (!empty($news['banner_image_3'])): ?>
+              <img src="<?php echo base_url('assets/uploads/news/' . $news['banner_image_3']); ?>" alt="Article Image 3" class="article-banner" style="flex: 1; min-width: 0;">
+            <?php endif; ?>
+          </div>
+        <?php endif; ?>
+      </div>
 
       <!-- Share -->
       <div style="display:flex; gap:10px; margin-bottom:20px; flex-wrap:wrap;">
