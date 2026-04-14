@@ -185,3 +185,12 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+-- ----------------------------
+-- Seed: Default Admin
+-- Password: Admin@1234
+-- ----------------------------
+INSERT INTO `admins` (`name`, `email`, `password`, `role`) VALUES
+('Interview Haryana Desk', 'admin@interviewharyana.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uXcWb/SCa', 'superadmin');
+-- NOTE: The hash above is for the string "password"
+-- Change it immediately after first login!
