@@ -153,6 +153,28 @@ class News_admin extends Admin_Controller
         redirect('admin/news');
     }
 
+    public function remove_image($id, $image_field)
+    {
+        $news = $this->News_model->get_by_id((int)$id);
+        
+        // Validate field name to prevent SQL injection or accidental deletion of other columns
+        $valid_fields = ['banner_image', 'banner_image_2', 'banner_image_3'];
+        
+        if ($news && in_array($image_field, $valid_fields)) {
+            // Delete the physical file
+            if (!empty($news[$image_field]) && file_exists($this->upload_path . $news[$image_field])) {
+                @unlink($this->upload_path . $news[$image_field]);
+            }
+            
+            // Clear the column in the database
+            $this->News_model->update_news((int)$id, [$image_field => NULL]);
+            
+            $this->session->set_flashdata('success', 'Image removed.');
+        }
+        
+        redirect('admin/news/edit/' . $id);
+    }
+
     public function toggle_status($id)
     {
         $news = $this->News_model->get_by_id((int)$id);

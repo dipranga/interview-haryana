@@ -39,6 +39,7 @@ $route['admin/news/edit/(:num)']     = 'admin/News_admin/edit/$1';
 $route['admin/news/update/(:num)']   = 'admin/News_admin/update/$1';
 $route['admin/news/delete/(:num)']   = 'admin/News_admin/delete/$1';
 $route['admin/news/status/(:num)']   = 'admin/News_admin/toggle_status/$1';
+$route['admin/news/remove_image/(:num)/(:any)'] = 'admin/News_admin/remove_image/$1/$2';
 
 // ── ADMIN CATEGORIES ─────────────────────────────────────────────────
 $route['admin/categories']                = 'admin/Category_admin/index';

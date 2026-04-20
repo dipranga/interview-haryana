@@ -91,32 +91,62 @@ $action  = $is_edit ? base_url('admin/news/update/' . $news['id']) : base_url('a
 
     <div class="form-group" style="border-bottom:1px solid #eee; padding-bottom:15px; margin-bottom:15px;">
       <label class="form-label">Image 1 (Main)</label>
+      
       <?php if ($is_edit && !empty($news['banner_image'])): ?>
-        <img src="<?php echo base_url('assets/uploads/news/' . $news['banner_image']); ?>"
-             style="width:100%; border-radius:6px; margin-bottom:10px;" alt="Current banner 1">
+        <div style="position:relative; display:inline-block; width:100%;">
+          <img src="<?php echo base_url('assets/uploads/news/' . $news['banner_image']); ?>"
+              style="width:100%; border-radius:6px; margin-bottom:10px;" alt="Current banner 1">
+          
+          <a href="<?php echo base_url('admin/news/remove_image/' . $news['id'] . '/banner_image'); ?>" 
+            title="Remove Image" aria-label="Remove Image"
+            onclick="return confirm('Remove this image? This action cannot be undone.');"
+            style="position:absolute; top:10px; right:10px; background:rgba(255,0,0,0.8); color:#fff; width:30px; height:30px; border-radius:50%; display:flex; align-items:center; justify-content:center; text-decoration:none;">
+            <i class="fas fa-times"></i>
+          </a>
+        </div>
       <?php endif; ?>
-      <input type="file" name="banner_image" class="form-control" accept="image/*" data-preview="bannerPreview1">
-      <img id="bannerPreview1" class="img-preview" style="display:none;" alt="Preview">
+      
+      <input type="file" name="banner_image" class="form-control" accept="image/*">
     </div>
 
     <div class="form-group" style="border-bottom:1px solid #eee; padding-bottom:15px; margin-bottom:15px;">
       <label class="form-label">Image 2</label>
+      
       <?php if ($is_edit && !empty($news['banner_image_2'])): ?>
-        <img src="<?php echo base_url('assets/uploads/news/' . $news['banner_image_2']); ?>"
-             style="width:100%; border-radius:6px; margin-bottom:10px;" alt="Current banner 2">
+        <div style="position:relative; display:inline-block; width:100%;">
+          <img src="<?php echo base_url('assets/uploads/news/' . $news['banner_image_2']); ?>"
+              style="width:100%; border-radius:6px; margin-bottom:10px;" alt="Current banner 2">
+          
+          <a href="<?php echo base_url('admin/news/remove_image/' . $news['id'] . '/banner_image_2'); ?>" 
+            title="Remove Image" aria-label="Remove Image"
+            onclick="return confirm('Remove this image? This action cannot be undone.');"
+            style="position:absolute; top:10px; right:10px; background:rgba(255,0,0,0.8); color:#fff; width:30px; height:30px; border-radius:50%; display:flex; align-items:center; justify-content:center; text-decoration:none;">
+            <i class="fas fa-times"></i>
+          </a>
+        </div>
       <?php endif; ?>
+      
       <input type="file" name="banner_image_2" class="form-control" accept="image/*" data-preview="bannerPreview2">
-      <img id="bannerPreview2" class="img-preview" style="display:none;" alt="Preview">
     </div>
 
-    <div class="form-group">
+    <div class="form-group" style="border-bottom:1px solid #eee; padding-bottom:15px; margin-bottom:15px;">
       <label class="form-label">Image 3</label>
+      
       <?php if ($is_edit && !empty($news['banner_image_3'])): ?>
-        <img src="<?php echo base_url('assets/uploads/news/' . $news['banner_image_3']); ?>"
-             style="width:100%; border-radius:6px; margin-bottom:10px;" alt="Current banner 3">
+        <div style="position:relative; display:inline-block; width:100%;">
+          <img src="<?php echo base_url('assets/uploads/news/' . $news['banner_image_3']); ?>"
+              style="width:100%; border-radius:6px; margin-bottom:10px;" alt="Current banner 3">
+          
+          <a href="<?php echo base_url('admin/news/remove_image/' . $news['id'] . '/banner_image_3'); ?>" 
+            title="Remove Image" aria-label="Remove Image"
+            onclick="return confirm('Remove this image? This action cannot be undone.');"
+            style="position:absolute; top:10px; right:10px; background:rgba(255,0,0,0.8); color:#fff; width:30px; height:30px; border-radius:50%; display:flex; align-items:center; justify-content:center; text-decoration:none;">
+            <i class="fas fa-times"></i>
+          </a>
+        </div>
       <?php endif; ?>
+      
       <input type="file" name="banner_image_3" class="form-control" accept="image/*" data-preview="bannerPreview3">
-      <img id="bannerPreview3" class="img-preview" style="display:none;" alt="Preview">
     </div>
   </div>
 </div>
