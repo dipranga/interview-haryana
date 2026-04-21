@@ -1,8 +1,10 @@
-<?php /* news/tag.php */ ?>
-<div class="container" style="padding:20px 0;">
-  <h1 style="font-size:22px; font-weight:800; margin-bottom:8px;">Tag: #<?php echo htmlspecialchars($tag_slug); ?></h1>
-  <p style="color:#888; font-size:13px; margin-bottom:24px;"><?php echo number_format($total); ?> खबरें</p>
-  
+<?php /* news/category.php */ ?>
+<div class="container" style="padding-top:24px; padding-bottom:40px;">
+  <div style="background:#fff; border-radius:4px; padding:20px 24px; margin-bottom:24px; box-shadow:0 2px 8px rgba(0,0,0,.07); border-left:5px solid green ?>;">
+    <h1 style="font-size:22px; font-weight:800;">Tag: #<?php echo htmlspecialchars($tag_slug); ?></h1>
+    <p style="color:#888; font-size:13px; margin-top:4px;"><?php echo number_format($total); ?> खबरें</p>
+  </div>
+
   <?php if (!empty($news)): ?>
     <div class="news-grid-4" style="margin-bottom:24px;">
       <?php foreach ($news as $n): ?>
