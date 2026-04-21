@@ -63,6 +63,30 @@ img { max-width:100%; height:auto; display:block; }
 .nav-list li a.active { color:var(--accent); border-bottom-color:var(--accent); background:rgba(245,197,24,.06); }
 .hamburger { display:none; background:none; border:none; color:#fff; font-size:22px; cursor:pointer; padding:13px 16px; }
 
+/* ============================================================
+   Mobile Navigation - Horizontal Scroll
+   ============================================================ */
+@media screen and (max-width: 768px) {
+  .main-nav ul {
+    overflow-x: auto; /* Enables horizontal scrolling */
+    overflow-y: hidden; /* Prevents vertical jiggling */
+    -webkit-overflow-scrolling: touch; /* Smooth momentum scrolling on iOS */
+    flex-wrap: nowrap; /* Forces items to stay in one line */
+    scrollbar-width: none; /* Hides the scrollbar in Firefox */
+  }
+
+  /* Hides the scrollbar in Chrome, Safari, and Edge */
+  .main-nav ul::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Slightly reduce padding on mobile to fit more items on screen */
+  .main-nav a {
+    padding: 12px 15px;
+    font-size: 15px;
+  }
+}
+
 /* ── NAV DROPDOWN ('More' Button in header) ─────────────────────────────────── */
 .nav-more { position:relative; }
 .nav-more > a { display:flex; align-items:center; gap:5px; }
